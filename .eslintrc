@@ -1,0 +1,35 @@
+{
+  "extends": "react-app",
+  "globals": {
+    "awaitAsync": false,
+    "expect": false,
+    "flushPromises": false,
+    "it": false
+  },
+  "rules": {
+    "comma-dangle": [
+      "error",
+      "always-multiline"
+    ],
+    "handle-callback-err": "off",
+    "indent": ["error", 2],
+    "key-spacing": [2, {
+      "singleLine": {
+          "beforeColon": false,
+          "afterColon": true
+      },
+      "multiLine": {
+          "beforeColon": false,
+          "afterColon": true
+      }
+    }],
+
+    "no-empty": ["error", { "allowEmptyCatch": true }],
+    "no-multiple-empty-lines": ["error", {"max": 1}],
+    "no-trailing-spaces": "error",
+    "object-property-newline": ["error", { "allowAllPropertiesOnSameLine": true }],
+    "object-curly-spacing": ["error", "always", { "arraysInObjects": true }],
+    "semi": ["error", "always"],
+    "space-in-parens": ["error", "never"]
+  }
+}
