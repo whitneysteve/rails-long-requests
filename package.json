@@ -1,0 +1,43 @@
+{
+  "name": "rails-long-requests",
+  "version": "0.0.1",
+  "private": true,
+  "homepage": "https://github.com/whitneysteve/rails-long-requests",
+  "dependencies": {
+    "react": "18.2",
+    "react-dom": "18.2"
+  },
+  "devDependencies": {
+    "eslint": "8.0.0",
+    "eslint-config-react-app": "7.0.1",
+    "eslint-plugin-import": "^2.27.5",
+    "gh-pages": "3.2.3",
+    "npm-run-all": "4.1.5",
+    "prettier": "2.8.4",
+    "react-scripts": "^5.0.1"
+  },
+  "scripts": {
+    "build": "npm-run-all lint build-css build-js",
+    "build-css": "sass --update src/index.scss:src/index.css",
+    "build-js": "react-scripts --openssl-legacy-provider build",
+    "deploy": "gh-pages -d build",
+    "eject": "react-scripts eject",
+    "lint": "eslint --fix src",
+    "predeploy": "yarn run build",
+    "sass": "sass --watch src/index.scss:src/index.css",
+    "start": "npm-run-all -p lint sass start-js",
+    "start-js": "react-scripts --openssl-legacy-provider start"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
