@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/whitneysteve/rails-long-requests/static/css/main.884d7f70.css",
+    "main.js": "/whitneysteve/rails-long-requests/static/js/main.f8c701ed.js",
+    "index.html": "/whitneysteve/rails-long-requests/index.html",
+    "main.884d7f70.css.map": "/whitneysteve/rails-long-requests/static/css/main.884d7f70.css.map",
+    "main.f8c701ed.js.map": "/whitneysteve/rails-long-requests/static/js/main.f8c701ed.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.884d7f70.css",
+    "static/js/main.f8c701ed.js"
+  ]
+}

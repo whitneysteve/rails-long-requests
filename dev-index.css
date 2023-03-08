@@ -1,0 +1,76 @@
+body {
+  height: 100vh;
+  height: var(--app-height);
+  overflow: hidden;
+  width: 100vw;
+}
+
+a, button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #b0afaf;
+  margin: 20px;
+}
+
+h1 {
+  font-size: 3.5em;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 2.5em;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 1.5em;
+  font-weight: 400;
+}
+
+p {
+  font-size: 1.2em;
+  margin: 20px;
+  text-align: center;
+}
+
+.Section {
+  scroll-snap-align: start;
+}
+.Section p {
+  color: #b0afaf;
+  margin: 20px 60px;
+  font-size: 1.6em;
+}
+@media only screen and (max-width: 600px) {
+  .Section p {
+    font-size: 1.2em;
+    margin: 10px 20px;
+  }
+}
+@media screen and (min-width: 601px) and (max-width: 916px) {
+  .Section p {
+    font-size: 1.5em;
+  }
+}
+@media screen and (max-height: 550px) {
+  .Section p {
+    font-size: 1.2em;
+    margin: 10px;
+  }
+}
+@media screen and (max-height: 350px) {
+  .Section p {
+    font-size: 0.5em;
+    margin: 5px;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: gill-sans-nova, "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+}
+
+/*# sourceMappingURL=index.css.map */
