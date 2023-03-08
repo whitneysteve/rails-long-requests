@@ -1,0 +1,59 @@
+// Create a kind-of media tag for certain browsers.
+@mixin browser($browsers...) {
+  @each $browser in $browsers {
+    html[data-browser*="#{$browser}"] & {
+      @content;
+    }
+  }
+}
+
+@mixin dark-text {
+  color: $dark-grey;
+}
+
+@mixin horizontal-text {
+  margin: 20px 60px;
+
+  @media #{$phone} {
+    font-size: 1.2em;
+    margin: 10px 20px;
+  }
+
+  @media #{$tablet} {
+    font-size: 1.5em;
+  }
+
+  @media #{$letterbox} {
+    font-size: 1.2em;
+    margin: 10px;
+  }
+
+  @media #{$small-letterbox} {
+    font-size: 0.5em;
+    margin: 5px;
+  }
+}
+
+@mixin parallax {
+  min-height: 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+
+  @media #{$phone}, #{$tablet} {
+    background-attachment: scroll
+  }
+}
+
+@mixin slight-shadow {
+  // Generated
+  -webkit-box-shadow: 0px 6px 13px 0px rgba(219,219,219,1);
+  -moz-box-shadow: 0px 6px 13px 0px rgba(219,219,219,1);
+  box-shadow: 0px 6px 13px 0px rgba(219,219,219,1);
+}
+
+@mixin slight-inset-shadow {
+  // Generated
+  -webkit-box-shadow: inset 0px 0px 19px -5px rgba(0,0,0,0.34);
+  -moz-box-shadow: inset 0px 0px 19px -5px rgba(0,0,0,0.34);
+  box-shadow: inset 0px 0px 19px -5px rgba(0,0,0,0.34);
+}

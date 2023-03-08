@@ -1,0 +1,52 @@
+// Some common styles
+
+$white: #ffffff;
+$light-grey: #efefef;
+$medium-grey: #a8a8a8;
+$dark-grey: #b0afaf;
+
+body {
+  height: 100vh;
+  height: var(--app-height);
+  overflow: hidden;
+  width: 100vw;
+}
+
+a, button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1, h2, h3, h4, h5 {
+  @include dark-text();
+  margin: 20px;
+}
+
+h1 {
+  font-size: 3.5em;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 2.5em;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 1.5em;
+  font-weight: 400;
+}
+
+p {
+  font-size: 1.2em;
+  margin: 20px;
+  text-align: center;
+}
+
+.Section {
+  scroll-snap-align: start;
+  p {
+    @include dark-text();
+    @include horizontal-text();
+    font-size: 1.6em;
+  }
+}
