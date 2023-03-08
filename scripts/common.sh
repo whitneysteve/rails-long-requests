@@ -13,7 +13,7 @@ function lint() {
   yarn run lint
 }
 
-function run() {
+function run_blog() {
   msg "Running Locally..."
   yarn start
 }
