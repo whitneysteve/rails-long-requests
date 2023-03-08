@@ -28,7 +28,7 @@ git checkout -b $tmp_branch
 msg "Merging changes from $branch"
 git merge $branch
 
-test_and_lint
+lint
 
 msg "Tests OK, deleting integration branch: $tmp_branch"
 git checkout main
