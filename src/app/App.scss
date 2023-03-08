@@ -1,0 +1,10 @@
+:root {
+  --app-height: 100%;
+}
+
+.App {
+  height: 100vh;
+  height: var(--app-height);
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+}
