@@ -12,7 +12,7 @@ You can view the blog post [here](http://TODO).
 Working on the code
 -------------------
 
-Working on this usually follows the following pattern. You'll need `yarn` and to run `./setup` to set up.
+Working on this usually follows the following pattern. You'll need [`nvm`](https://github.com/nvm-sh/nvm#installing-and-updating), [`rvm`](https://rvm.io/rvm/install) and to run `./setup` to set up.
 
 Create a branch
 ...............
