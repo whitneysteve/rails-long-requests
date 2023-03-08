@@ -2,7 +2,7 @@
   "name": "rails-long-requests",
   "version": "0.0.1",
   "private": true,
-  "homepage": "https://github.com/whitneysteve/rails-long-requests",
+  "homepage": "https://whitneysteve.github.io/rails-long-requests",
   "dependencies": {
     "react": "18.2",
     "react-dom": "18.2"
