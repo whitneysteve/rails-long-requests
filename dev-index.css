@@ -11,12 +11,16 @@ a, button {
 
 h1, h2, h3, h4, h5 {
   color: #b0afaf;
-  margin: 20px;
 }
 
 h1 {
   font-size: 3.5em;
   font-weight: 400;
+}
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 2.5em;
+  }
 }
 
 h2 {
@@ -31,40 +35,44 @@ h3 {
 
 p {
   font-size: 1.2em;
-  margin: 20px;
-  text-align: center;
 }
 
 .Section {
-  scroll-snap-align: start;
+  border-bottom: 1px solid #efefef;
+  margin: 20px;
 }
-.Section p {
-  color: #b0afaf;
-  margin: 20px 60px;
-  font-size: 1.6em;
+
+:root {
+  --app-height: 100%;
 }
-@media only screen and (max-width: 600px) {
-  .Section p {
-    font-size: 1.2em;
-    margin: 10px 20px;
+
+.App {
+  height: 100vh;
+  height: var(--app-height);
+  overflow-y: auto;
+}
+.App .Layout {
+  display: flex;
+  flex-direction: row;
+}
+.App .Layout div:first-child {
+  width: 75%;
+}
+.App .Layout div:last-child {
+  width: 25%;
+}
+@media only screen and (max-width: 600px), tablet {
+  .App .Layout div:last-child {
+    display: none;
+  }
+  .App .Layout div:first-child {
+    width: 100%;
   }
 }
-@media screen and (min-width: 601px) and (max-width: 916px) {
-  .Section p {
-    font-size: 1.5em;
-  }
-}
-@media screen and (max-height: 550px) {
-  .Section p {
-    font-size: 1.2em;
-    margin: 10px;
-  }
-}
-@media screen and (max-height: 350px) {
-  .Section p {
-    font-size: 0.5em;
-    margin: 5px;
-  }
+
+.Header {
+  border-bottom: 1px solid #efefef;
+  margin: 20px;
 }
 
 body {
