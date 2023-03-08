@@ -7,31 +7,13 @@
   }
 }
 
-@mixin dark-text {
-  color: $dark-grey;
+@mixin section {
+  border-bottom: 1px solid $light-grey;
+  margin: 20px;
 }
 
-@mixin horizontal-text {
-  margin: 20px 60px;
-
-  @media #{$phone} {
-    font-size: 1.2em;
-    margin: 10px 20px;
-  }
-
-  @media #{$tablet} {
-    font-size: 1.5em;
-  }
-
-  @media #{$letterbox} {
-    font-size: 1.2em;
-    margin: 10px;
-  }
-
-  @media #{$small-letterbox} {
-    font-size: 0.5em;
-    margin: 5px;
-  }
+@mixin dark-text {
+  color: $dark-grey;
 }
 
 @mixin parallax {

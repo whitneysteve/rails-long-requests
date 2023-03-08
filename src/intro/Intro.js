@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import Header from '../header/Header';
-import Toc from '../toc/Toc';
 
 /**,
  * The main driver and parent container for the app.
@@ -17,18 +15,7 @@ class App extends Component {
   render() {
     return (
       <div className="App" id="App">
-        <Header />
-        <div className="Section Layout">
-          <div className="Content">
-            Content<br/>
-            Content<br/>
-            Content<br/>
-            Content<br/>
-            Content<br/>
-            Content<br/>
-          </div>
-          <Toc />
-        </div>
+        Hello
       </div>
     );
   }
