@@ -16,7 +16,7 @@ class SocketHijacking extends Component {
         <p>
           Socket hijacking is a technique that extracts the socket from the response object in Rails and returns the thread handling the response to Rails. This way the connection to the cliet remains open but Rails is free to use the response thread to handle other requests.
         </p>
-        <Threads numThreads={4} allowSocketHijack />
+        <Threads numThreads={ 4 } allowSocketHijack />
         <p>
           This is the basis of the approach we're going to use to handle long running requests in Rails. in this blog post.
         </p>

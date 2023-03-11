@@ -47,7 +47,7 @@ class Scenario extends Component {
         <Code>
           <>
             <div>$ curl http://localhost:3000/api/v1/random</div>
-            <div>{'{"randomNumber":9}'}</div>
+            <div>{ '{"randomNumber":9}' }</div>
           </>
         </Code>
         {/* VIDEO */}
@@ -65,7 +65,7 @@ class Scenario extends Component {
         <Code>
           <>
             <div>$ curl http://localhost:3000/api/v2/random</div>
-            <div>{'{"randomNumber":9}'}</div>
+            <div>{ '{"randomNumber":9}' }</div>
           </>
         </Code>
         {/* VIDEO */}

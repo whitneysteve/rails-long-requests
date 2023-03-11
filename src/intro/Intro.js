@@ -17,7 +17,7 @@ class Intro extends Component {
         <p>
           In order to scale and serve multiple requests at a time, Rails will use a threaded web-server. It comes with <a href="https://puma.io/">Puma</a> as the default. The demo below shows how Rails response threads work in a web server configured with 4 response threads.
         </p>
-        <Threads numThreads={4} />
+        <Threads numThreads={ 4 } />
         <h3>Limited Threading in Ruby</h3>
         <p>
           Based on that, we might think that adding threads in Rails will increase concurrency and it does. However, to a limited extent.
@@ -38,7 +38,7 @@ class Intro extends Component {
         <p>
           We saw in the demo above that with short running tasks even a small number of threads can do a lot of work. But with Rails applications thread numbers are usually counted in the 10s. So when even a small number of longer running requests are made, it can quickly clog up the pipeline. Here's another demo that allows sending long running tasks, as well as short-running ones. Try running 10-20 short running tasks then 4 long-running tasks and see the difference.
         </p>
-        <Threads numThreads={4} allowLong />
+        <Threads numThreads={ 4 } allowLong />
         <p>
           We quickly lose the ability to process requests. Rails will queue requests up behind the long-running requests but that just means that there's a backlog to get through when the long-running tasks are finished and clients, normally, don't wait around forever!
         </p>

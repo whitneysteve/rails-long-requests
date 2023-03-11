@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
 import me from '../img/me.jpg';
+import React, { Component } from 'react';
 import ruby from '../img/ruby.svg';
 
 /**

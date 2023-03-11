@@ -14,8 +14,8 @@ class Threads extends Component {
 
     this.threads = Array.from({ length: this.props.numThreads } , (_, idx) => ({
       id: idx,
-      ref: createRef(),
       nextAvailable: 0,
+      ref: createRef(),
       requests: [],
     }));
 
@@ -72,49 +72,54 @@ class Threads extends Component {
     return (
       <div className="Threads">
         {this.threads.map((thread) => {
-          return (<div className='Threads--Thread' key={`thread-${thread.id}`} ref={thread.ref}>
-            <div className='Threads--Thread--Name'>Thread {thread.id}</div>
-            {thread.requests.map((request) => {
-              return (
-                <>
-                  {request.hijackEnd &&
-                    <div
-                      className='Threads--Thread--Hijacked-Request'
-                      key={`${thread.id}-${request.start}-hijack`}
-                      style={{
-                        height: `${((request.hijackEnd - request.start) * 5)}px`,
-                        top: `${request.start * 5}px`,
-                      }} />
-                  }
-                  <div
-                    className='Threads--Thread--Request'
-                    key={`${thread.id}-${request.start}-request`}
-                    style={{
-                      height: `${((request.end - request.start) * 5)}px`,
-                      top: `${request.start * 5}px`,
-                    }} />
-
-                </>
-              );
-            })}
-          </div>);
+          return (
+            <div className='Threads--Thread' key={`thread-${thread.id}`} ref={thread.ref}>
+              <div className='Threads--Thread--Name'>Thread {thread.id}</div>
+              {
+                thread.requests.map((request) => {
+                  return (
+                    <>
+                      {request.hijackEnd &&
+                        <div
+                          className='Threads--Thread--Hijacked-Request'
+                          key={ `${thread.id}-${request.start}-hijack` }
+                          style={{
+                            height: `${((request.hijackEnd - request.start) * 5)}px`,
+                            top: `${request.start * 5}px`,
+                          }} />
+                      }
+                      <div
+                        className='Threads--Thread--Request'
+                        key={ `${thread.id}-${request.start}-request` }
+                        style={{
+                          height: `${((request.end - request.start) * 5)}px`,
+                          top: `${request.start * 5}px`,
+                        }} />
+                    </>
+                  );
+                })}
+            </div>);
         })}
-        <div className="Threads--Time" style={{ top: `${this.state.position * 5}px` }}>
+        <div className="Threads--Time" style={ { top: `${this.state.position * 5}px` } }>
           <div className="Threads--Time--Label">Time</div>
         </div>
         <div className="Threads--Timer">
-          <div>Requests made: {this.threads.reduce((a,b) => a + b.requests.length, 0)}</div>
-          <div>Time passed: {this.state.position} seconds</div>
+          <div>Requests made: { this.threads.reduce((a,b) => a + b.requests.length, 0) }</div>
+          <div>Time passed: { this.state.position } seconds</div>
         </div>
         <div className="Threads--Controls">
-          <button disabled={this.state.running} onClick={this.start}>Start</button>
-          <button disabled={!this.state.running} onClick={this.reset}>Reset</button>
-          <button disabled={!this.state.running} onClick={() => this.request(0.5)}>500ms Request</button>
-          { this.props.allowLong &&
-            <button disabled={!this.state.running} onClick={() => this.request(10)}>10s Request</button>
+          <button disabled={ this.state.running } onClick={ this.start }>Start</button>
+          <button disabled={ !this.state.running } onClick={ this.reset }>Reset</button>
+          <button disabled={ !this.state.running } onClick={ () => this.request(0.5) }>500ms Request</button>
+          {
+            this.props.allowLong &&
+              <button disabled={ !this.state.running } onClick={ () => this.request(10) }>10s Request</button>
           }
-          { this.props.allowSocketHijack &&
-            <button disabled={!this.state.running} onClick={() => this.request(0.5, 10)}>10s Socket Hijack Request</button>
+          {
+            this.props.allowSocketHijack &&
+              <button
+                disabled={ !this.state.running }
+                onClick={ () => this.request(0.5, 10) }>10s Socket Hijack Request</button>
           }
         </div>
       </div>
