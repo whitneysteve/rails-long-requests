@@ -43,8 +43,10 @@ class Scenario extends Component {
           With the Rails server running you can execute the cURL command to make a request to the first version of the API:
         </p>
         <Code>
+          <>
           curl http://localhost:3000/api/v1/random
-          {'{"randomNumber":9}'}
+            {'{"randomNumber":9}'}
+          </>
         </Code>
         {/* VIDEO */}
         <p>
@@ -59,8 +61,10 @@ class Scenario extends Component {
           If you try and use the new version of the API that takes 30 seconds, you can see the problem almost immediately:
         </p>
         <Code>
+          <>
           curl http://localhost:3000/api/v2/random
-          {'{"randomNumber":9}'}
+            {'{"randomNumber":9}'}
+          </>
         </Code>
         {/* VIDEO */}
         <p>

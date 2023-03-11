@@ -58,7 +58,7 @@ class Implementation extends Component {
           Insert code here
         </Code>
         <p>
-          In the <Code>do_slow_task</Code> method we perform the slow random number generation.
+          In the <Code inline>do_slow_task</Code> method we perform the slow random number generation.
         </p>
         <h3>The result</h3>
         <p>
