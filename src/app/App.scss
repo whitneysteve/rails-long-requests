@@ -10,5 +10,10 @@
   >:first-child {
     margin-left: 20%;
     width: 60%;
+
+    @media #{$phone} {
+      margin-left: 2.5%;
+      width: 95%;
+    }
   }
 }
