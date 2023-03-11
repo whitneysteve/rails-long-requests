@@ -17,7 +17,7 @@ class Header extends Component {
         </div>
         <p>
           Welcome to my blog post! This is a tutorial on how to handle long running requests in Rails. This tutorial
-          will walk you through why long running requests are a problem in Rails and how to handle them in a scalable
+          will walk you through why long running requests are a problem and how to handle them in a scalable
           fashion.
         </p>
         <p>

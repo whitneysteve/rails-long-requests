@@ -50,14 +50,14 @@ class Scenario extends Component {
             <div>{ '{"randomNumber":9}' }</div>
           </>
         </Code>
-        {/* VIDEO */}
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/84WODooZXys" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         <p>
           This is really fast and returns a random number very quickly, over and over. In fact you can probably do it multiple times in many terminals and it will return a random number most of the time.
         </p>
         <Code>
           $ for i in `seq 1 1000`; do; curl http://localhost:3000/api/v1/random; done
         </Code>
-        {/* VIDEO */}
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/VYPlCsjV-Ug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         <h3>Reproducing the problem</h3>
         <p>
           If you try and use the new version of the API that takes 30 seconds, you can see the problem almost immediately:
@@ -68,12 +68,12 @@ class Scenario extends Component {
             <div>{ '{"randomNumber":9}' }</div>
           </>
         </Code>
-        {/* VIDEO */}
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/l1OaBlx_e54" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         <p>
-          While this request is running, you can't make any other requests to the API, even the simple V1 API that usually was so quick to respond.
+          While this request is running, you can't make any other requests to the API, even the simple v1 API that usually was so quick to respond.
         </p>
         <p>
-          Not only do we have a performance issue on our new API, we've also introduced one in our old v1 API.
+          Not only do we have a performance issue on our new API, we've also introduced one in our old, v1 API.
         </p>
       </>
     );

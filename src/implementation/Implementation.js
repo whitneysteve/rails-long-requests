@@ -79,11 +79,11 @@ class Implementation extends Component {
         </p>
         <div className="EmbeddedCode" ref={ this.l3l4Ref } />
         <p>
-          At lines 5-8 we start a separate process to generate the random number. this could just as easily be submitting a task to a work system, making a downstream call or placing the socket in an in-memory hash, to be retrieved by an event subscriber later on.
+          At lines 5-8 we start a separate process to generate the random number. This could just as easily be submitting a task to a work system, making a downstream call or placing the socket in an in-memory hash, to be retrieved by an event subscriber later on.
         </p>
         <div className="EmbeddedCode" ref={ this.l5l8Ref } />
         <p>
-          At line 10, we close th response. This is the signal to Rails that we are done with the response thread and it can re-use it to server other requests.
+          At line 10, we close the response. This is the signal to Rails that we are done with the response thread and Rails is free to re-use it to serve other requests.
         </p>
         <div className="EmbeddedCode" ref={ this.l10Ref } />
         <p>
@@ -102,10 +102,10 @@ class Implementation extends Component {
         <Code>
           curl http://localhost:3000/api/v1/random
         </Code>
-        {/* VIDEO */}
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/JIZJGY_BXos" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         <h3>Risks</h3>
         <p>
-          Socket hijacking is not without it's downsides and risks, some of which it's important to discuss here.
+          Socket hijacking is not without it's downsides and risks, some of which are important to discuss here.
         </p>
         <h4>Formatting the response</h4>
         <p>
@@ -113,19 +113,18 @@ class Implementation extends Component {
         </p>
         <div className="EmbeddedCode" ref={ this.l23l35Ref } />
         <p>
-          While we may not notice a missing new line or mind the difference of a few bytes in content length calculation do remember that the internet runs atop many layers of proxies, load balancers and other intermediaries that may have more or less rigid interpretations of the HTTP specification. So we need to make sure we conform to that spec as close as possible for trouble free communication.
+          While we may not notice a missing new line or mind the difference of a few bytes in <Code inline>Content-Length</Code> calculation - do remember that the internet runs atop many layers of proxies, load balancers and other intermediaries that may have more or less rigid interpretations of the HTTP specification. So we need to make sure we conform to that spec as close as possible for trouble free communication.
         </p>
-        {/* Image */}
         <h5>Partial socket hijacking</h5>
         <p>
           Partial socket hijacking is an alternative that can help here. With partial socket hijacking Rails will still write the HTTP status line and headers and we are only responsible for writing the response body. This is useful if we don't need to adapt the HTTP status line or response headers based on our slow running task.
         </p>
         <h4>Unclosed sockets</h4>
         <p>
-          If, after taking responsibility to close the socket, fail to do so it is possible that the client connection will remain open indefinitely. Sockets on any given server are limited and once they are all utilised unpredictable things can occur. No further requests may be processed and remote access to the server may not be possible.
+          If, after taking responsibility to close the socket, we fail to do so it is possible that the client connection will remain open indefinitely. Sockets on any given server are limited and once they are all utilized unpredictable things can occur. No further requests may be processed and remote access to the server may not be possible.
         </p>
         <p>
-          In our controller, at line 23, we use <Code inline>ensure</Code> to make sure the socket is always closed but if your application is doing more complicated things, like storing sockets while awaiting a subscription event, it would be a great idea to make sure to limit the number of sockets we hijack and keep open at any one time.
+          In our controller, at line 23, we use <Code inline>ensure</Code> to make sure the socket is always closed. However, if your application is doing more complicated things, like storing sockets while awaiting a subscription event, it would be a great idea to make sure to limit the number of sockets we hijack and keep open at any one time.
         </p>
         <div className="EmbeddedCode" ref={ this.l21Ref } />
       </>

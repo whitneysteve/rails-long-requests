@@ -74,7 +74,7 @@ class Threads extends Component {
         {this.threads.map((thread) => {
           return (
             <div className='Threads--Thread' key={`thread-${thread.id}`} ref={thread.ref}>
-              <div className='Threads--Thread--Name'>Thread {thread.id}</div>
+              <div className='Threads--Thread--Name'>Thread {thread.id + 1}</div>
               {
                 thread.requests.map((request) => {
                   return (
