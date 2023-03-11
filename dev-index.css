@@ -71,6 +71,14 @@ p {
   }
 }
 
+.Code {
+  font-family: "Courier New", Courier, monospace;
+}
+
+pre {
+  font-family: "Courier New", Courier, monospace;
+}
+
 .Header {
   border-bottom: 1px solid #efefef;
   margin: 20px;
