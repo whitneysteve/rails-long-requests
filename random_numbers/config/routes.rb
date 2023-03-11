@@ -14,5 +14,8 @@ Rails.application.routes.draw do
     namespace :v3 do
       resources :random, only: [ :index ]
     end
+    namespace :v4 do
+      resources :random, only: [ :index ]
+    end
   end
 end
