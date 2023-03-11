@@ -31,6 +31,9 @@ class Intro extends Component {
         <p>
           In a typical web application a significant amount of time is spent performing I/O, so Ruby and Rails will scale and increasing threads will likely help with concurrency. However, where a request requires a lot of calculations, waiting and/or polling increasing threads will have a limited effect.
         </p>
+        <p>
+          The maintenance of a thread is also overhead, which can often be unnecessary.
+        </p>
         <h3>Thread Exhaustion</h3>
         <p>
           We saw in the demo above that with short running tasks even a small number of threads can do a lot of work. But with Rails applications thread numbers are usually counted in the 10s. So when even a small number of longer running requests are made, it can quickly clog up the pipeline. Here's another demo that allows sending long running tasks, as well as short-running ones. Try running 10-20 short running tasks then 4 long-running tasks and see the difference.

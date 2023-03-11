@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../header/Header';
 import Intro from '../intro/Intro';
+import Scenario from '../scenario/Scenario';
 import SocketHijacking from '../sockethijacking/SocketHijacking';
 import Toc from '../toc/Toc';
 
@@ -24,6 +25,7 @@ class App extends Component {
           <div className="Content">
             <Intro />
             <SocketHijacking />
+            <Scenario />
           </div>
           <Toc />
         </div>

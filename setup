@@ -4,10 +4,24 @@
 
 set -e
 
-# nvm install 19.7.0
+source ~/.nvm/nvm.sh
+
+nvm install 19.7.0
+nvm use 19.7
+
 npm install --global yarn
 npm install --global sass
 
-
 yarn install
 yarn global add npm-run-all
+
+rvm install 2.7.2
+rvm use 2.7.2
+rvm gemset create rails-long-requests
+rvm gemset use rails-long-requests
+gem install rails
+
+cd random_numbers
+bundle install
+cd ..
+

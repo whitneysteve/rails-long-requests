@@ -18,6 +18,12 @@ function run_blog() {
   yarn start
 }
 
+function run_rails() {
+  msg "Running Locally..."
+  cd random_numbers
+  bin/rails server
+}
+
 function msg() {
   echo
   echo "*************************"
