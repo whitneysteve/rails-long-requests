@@ -32,6 +32,10 @@ h3 {
   margin-top: 35px;
 }
 
+iframe {
+  margin: 20px;
+}
+
 li {
   font-size: 15px;
   margin-bottom: 10px;
@@ -122,7 +126,7 @@ p {
   background: rgb(255, 239, 184);
   background: linear-gradient(180deg, rgb(255, 239, 184) 0%, rgb(255, 199, 199) 95%);
   display: flex;
-  height: 400px;
+  height: 300px;
   justify-content: center;
   margin-left: 30px;
   position: relative;
