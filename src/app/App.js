@@ -1,3 +1,5 @@
+import About from '../about/About';
+import Conclusion from '../conclusion/Conclusion';
 import React, { Component } from 'react';
 import Header from '../header/Header';
 import Implementation from '../implementation/Implementation';
@@ -22,12 +24,14 @@ class App extends Component {
     return (
       <div className="App" id="App">
         <Header />
-        <div className="Section Layout">
+        <div className="Layout">
           <div className="Content">
             <Intro />
             <SocketHijacking />
             <Scenario />
             <Implementation />
+            <Conclusion />
+            <About />
           </div>
           <Toc />
         </div>

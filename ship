@@ -2,8 +2,8 @@
 
 # Ship your change!
 #
-# Commit the latest changes, get the latest master and merge it, run tests and linter
-# and, if all is OK, merge your changes to master and push to origin for deploy.
+# Commit the latest changes, get the latest main and merge it, run tests and linter
+# and, if all is OK, merge your changes to main and push to origin for deploy.
 
 . scripts/common.sh
 

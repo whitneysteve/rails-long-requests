@@ -8,6 +8,8 @@ $dark-grey: #b0afaf;
 body {
   height: 100vh;
   height: var(--app-height);
+  margin-left: 20px;
+  margin-right: 20px;
   overflow: hidden;
   width: 100vw;
 }
@@ -42,8 +44,4 @@ h3 {
 p {
   font-size: 1.2em;
   @include medium-text();
-}
-
-.Section {
-  @include section();
 }
