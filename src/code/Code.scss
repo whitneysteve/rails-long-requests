@@ -1,20 +1,22 @@
 @mixin code-text {
   background-color: $very-light;
-  border-bottom: 1px solid $light;
-  border-radius: 3px;
+  border-radius: 4px;
   color: $dark;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+  font-size: 15px;
+  font-weight: 500;
 }
 
 .InlineCode {
   @include code-text();
+  border-bottom: 2px solid $highlight;
   padding-left: 5px;
   padding-right: 5px;
 }
 
 .CodeBlock {
   @include code-text();
-  font-size: 15px;
-  padding: 10px;
+  border-bottom: 5px solid $highlight;
   overflow: wrap;
+  padding: 10px;
 }

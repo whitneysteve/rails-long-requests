@@ -1,10 +1,42 @@
 import Code from '../code/Code';
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 
 /**
  * The Implementation component. Contains the explanation of how to hijack the socket.
  */
 class Implementation extends Component {
+  constructor(props) {
+    super(props);
+
+    this.version1Ref = createRef();
+    this.version2Ref = createRef();
+    this.version3Ref = createRef();
+    this.l3l4Ref = createRef();
+    this.l5l8Ref = createRef();
+    this.l10Ref = createRef();
+    this.l23l35Ref = createRef();
+    this.l21Ref = createRef();
+  }
+
+  componentDidMount() {
+    this.embedCode(this.version1Ref, "https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fwhitneysteve%2Frails-long-requests%2Fblob%2Fmain%2Frandom_numbers%2Fapp%2Fcontrollers%2Fapi%2Fv1%2Frandom_controller.rb&style=atom-one-light&type=code&showLineNumbers=on&showFileMeta=on&fetchFromJsDelivr=on");
+    this.embedCode(this.version2Ref, "https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fwhitneysteve%2Frails-long-requests%2Fblob%2Fmain%2Frandom_numbers%2Fapp%2Fcontrollers%2Fapi%2Fv2%2Frandom_controller.rb&style=atom-one-light&type=code&showLineNumbers=on&showFileMeta=on&fetchFromJsDelivr=on");
+    this.embedCode(this.version3Ref, "https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fwhitneysteve%2Frails-long-requests%2Fblob%2Fmain%2Frandom_numbers%2Fapp%2Fcontrollers%2Fapi%2Fv3%2Frandom_controller.rb&style=atom-one-light&type=code&showLineNumbers=on&showFileMeta=on&fetchFromJsDelivr=on");
+    this.embedCode(this.l3l4Ref, "https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fwhitneysteve%2Frails-long-requests%2Fblob%2Fmain%2Frandom_numbers%2Fapp%2Fcontrollers%2Fapi%2Fv3%2Frandom_controller.rb%23L3-L4&style=atom-one-light&type=code&showLineNumbers=on&showFileMeta=on&fetchFromJsDelivr=on");
+    this.embedCode(this.l5l8Ref, "https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fwhitneysteve%2Frails-long-requests%2Fblob%2Fmain%2Frandom_numbers%2Fapp%2Fcontrollers%2Fapi%2Fv3%2Frandom_controller.rb%23L6-L8&style=atom-one-light&type=code&showLineNumbers=on&showFileMeta=on&fetchFromJsDelivr=on");
+    this.embedCode(this.l10Ref, "https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fwhitneysteve%2Frails-long-requests%2Fblob%2Fmain%2Frandom_numbers%2Fapp%2Fcontrollers%2Fapi%2Fv3%2Frandom_controller.rb%23L10&style=atom-one-light&type=code&showLineNumbers=on&showFileMeta=on&fetchFromJsDelivr=on");
+    this.embedCode(this.l23l35Ref, "https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fwhitneysteve%2Frails-long-requests%2Fblob%2Fmain%2Frandom_numbers%2Fapp%2Fcontrollers%2Fapi%2Fv3%2Frandom_controller.rb%23L28-L35&style=atom-one-light&type=code&showLineNumbers=on&showFileMeta=on&fetchFromJsDelivr=on");
+    this.embedCode(this.l21Ref, "https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fwhitneysteve%2Frails-long-requests%2Fblob%2Fmain%2Frandom_numbers%2Fapp%2Fcontrollers%2Fapi%2Fv3%2Frandom_controller.rb%23L23-L26&style=atom-one-light&type=code&showLineNumbers=on&showFileMeta=on&fetchFromJsDelivr=on");
+  }
+
+  embedCode(ref, link) {
+    const script = document.createElement("script");
+    script.type = "text/javascript";
+    script.async = true;
+    script.src = link;
+    ref.current.appendChild(script);
+  }
+
   render() {
     return (
       <>
@@ -31,32 +63,29 @@ class Implementation extends Component {
           </li>
         </ol>
         <p>
-          Let's compare Version 2 and Version 3. In version 2 we call the <Code inline>slow_rand</Code> function. This takes 30 seconds to complete, which is blocking the response thread.
+          First, let's take a look at v1, the simplest implementation.
         </p>
-        {/* Embed code */}
+        <div className="EmbeddedCode" ref={this.version1Ref} />
+        <p>
+          We just generate a random number and return it. Now, let's compare Version 2 and Version 3. In version 2 we call the <Code inline>slow_rand</Code> function. This takes 30 seconds to complete, which is blocking the response thread.
+        </p>
+        <div className="EmbeddedCode" ref={this.version2Ref} />
         <p>
           Now let's take a look at version 3, and see what the differences are.
         </p>
-        {/* Embed code */}
+        <div className="EmbeddedCode" ref={this.version3Ref} />
         <p>
           At lines 3 and 4 we are performing the hijacking, using <a href="https://github.com/rack/rack">Rack's</a> Hijacking API and we save the socket to the <Code inline>socket</Code> variable.
         </p>
-        <Code>
-          Insert code here
-        </Code>
+        <div className="EmbeddedCode" ref={this.l3l4Ref} />
         <p>
           At lines 5-8 we start a separate process to generate the random number. this could just as easily be submitting a task to a work system, making a downstream call or placing the socket in an in-memory hash, to be retrieved by an event subscriber later on.
         </p>
-        <Code>
-          Insert code here
-          Insert code here
-        </Code>
+        <div className="EmbeddedCode" ref={this.l5l8Ref} />
         <p>
           At line 10, we close th response. This is the signal to Rails that we are done with the response thread and it can re-use it to server other requests.
         </p>
-        <Code>
-          Insert code here
-        </Code>
+        <div className="EmbeddedCode" ref={this.l10Ref} />
         <p>
           In the <Code inline>do_slow_task</Code> method we perform the slow random number generation.
         </p>
@@ -82,6 +111,7 @@ class Implementation extends Component {
         <p>
           With full socket hijacking we are responsible for making sure the response to the client is well-formed. In our solution you can seem on lines 21-35 we need to write the code that handles the HTTP response status line and headers.
         </p>
+        <div className="EmbeddedCode" ref={this.l23l35Ref} />
         <p>
           While we may not notice a missing new line or mind the difference of a few bytes in content length calculation do remember that the internet runs atop many layers of proxies, load balancers and other intermediaries that may have more or less rigid interpretations of the HTTP specification. So we need to make sure we conform to that spec as close as possible for trouble free communication.
         </p>
@@ -97,6 +127,7 @@ class Implementation extends Component {
         <p>
           In our controller, at line 23, we use <Code inline>ensure</Code> to make sure the socket is always closed but if your application is doing more complicated things, like storing sockets while awaiting a subscription event, it would be a great idea to make sure to limit the number of sockets we hijack and keep open at any one time.
         </p>
+        <div className="EmbeddedCode" ref={this.l21Ref} />
       </>
     );
   }

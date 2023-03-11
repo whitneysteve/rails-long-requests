@@ -3,7 +3,8 @@
 $dark: #222;
 $mid: #717171;
 $light: #b1b0b0;
-$very-light: #e5e3e3;
+$very-light: #fafafa;
+$highlight: #f7f7f7;
 
 body {
   color: $dark;
@@ -48,4 +49,8 @@ li {
 p {
   margin-bottom: 20px;
   margin-top: 20px;
+}
+
+.EmbeddedCode {
+  width: 95%;
 }
