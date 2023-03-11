@@ -1,6 +1,8 @@
 body {
   height: 100vh;
   height: var(--app-height);
+  margin-left: 20px;
+  margin-right: 20px;
   overflow: hidden;
   width: 100vw;
 }
@@ -36,11 +38,6 @@ h3 {
 p {
   font-size: 1.2em;
   color: #a8a8a8;
-}
-
-.Section {
-  border-bottom: 1px solid #efefef;
-  margin: 20px;
 }
 
 :root {
@@ -81,12 +78,9 @@ pre {
 
 .Header {
   border-bottom: 1px solid #efefef;
-  margin: 20px;
 }
 
 body {
-  margin: 0;
-  padding: 0;
   font-family: gill-sans-nova, "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
 }
 
