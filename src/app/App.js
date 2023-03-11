@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../header/Header';
 import Toc from '../toc/Toc';
+import Why from '../why/Why';
 
 /**,
  * The main driver and parent container for the app.
@@ -20,12 +21,7 @@ class App extends Component {
         <Header />
         <div className="Section Layout">
           <div className="Content">
-            Content<br/>
-            Content<br/>
-            Content<br/>
-            Content<br/>
-            Content<br/>
-            Content<br/>
+            <Why />
           </div>
           <Toc />
         </div>

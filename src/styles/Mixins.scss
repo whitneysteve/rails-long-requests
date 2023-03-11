@@ -16,6 +16,10 @@
   color: $dark-grey;
 }
 
+@mixin medium-text {
+  color: $medium-grey;
+}
+
 @mixin parallax {
   min-height: 100%;
   background-attachment: fixed;

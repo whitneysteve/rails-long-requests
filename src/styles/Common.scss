@@ -41,6 +41,7 @@ h3 {
 
 p {
   font-size: 1.2em;
+  @include medium-text();
 }
 
 .Section {
