@@ -30,30 +30,28 @@ class Scenario extends Component {
           The Rails server in the repository above is configured with only one thread to make the problem abundantly clear and to make it easier to reproduce with a single person on a single machine. When you start the server with <Code inline>./run_rails</Code> you should see the following output:
         </p>
         <Code>
-          =&gt; Booting Puma
-          =&gt; Rails 7.0.4.2 application starting in development
-          =&gt; Run `bin/rails server --help` for more startup options
-          Puma starting in single mode...
-          * Puma version: 5.6.5 (ruby 2.7.2-p137) ("Birdie's Version")
-          *  Min threads: 1
-          *  Max threads: 1
+          <div>=&gt; Booting Puma</div>
+          <div>=&gt; Rails 7.0.4.2 application starting in development</div>
+          <div>=&gt; Run `bin/rails server --help` for more startup options</div>
+          <div>Puma starting in single mode...</div>
+          <div>* Puma version: 5.6.5 (ruby 2.7.2-p137) ("Birdie's Version")</div>
+          <div>*  Min threads: 1</div>
+          <div>*  Max threads: 1</div>
         </Code>
         <h3>Making requests</h3>
         <p>
           With the Rails server running you can execute the cURL command to make a request to the first version of the API:
         </p>
         <Code>
-          <>
-          curl http://localhost:3000/api/v1/random
-            {'{"randomNumber":9}'}
-          </>
+          <div>$ curl http://localhost:3000/api/v1/random</div>
+          <div>{'{"randomNumber":9}'}</div>
         </Code>
         {/* VIDEO */}
         <p>
           This is really fast and returns a random number very quickly, over and over. In fact you can probably do it multiple times in many terminals and it will return a random number most of the time.
         </p>
         <Code>
-          for i in `seq 1 1000`; do; curl http://localhost:3000/api/v1/random; done
+          $ for i in `seq 1 1000`; do; curl http://localhost:3000/api/v1/random; done
         </Code>
         {/* VIDEO */}
         <h3>Reproducing the problem</h3>
@@ -61,10 +59,8 @@ class Scenario extends Component {
           If you try and use the new version of the API that takes 30 seconds, you can see the problem almost immediately:
         </p>
         <Code>
-          <>
-          curl http://localhost:3000/api/v2/random
-            {'{"randomNumber":9}'}
-          </>
+          <div>$ curl http://localhost:3000/api/v2/random</div>
+          <div>{'{"randomNumber":9}'}</div>
         </Code>
         {/* VIDEO */}
         <p>

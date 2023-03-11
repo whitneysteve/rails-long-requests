@@ -1,47 +1,51 @@
 // Some common styles
 
-$white: #ffffff;
-$light-grey: #efefef;
-$medium-grey: #a8a8a8;
-$dark-grey: #b0afaf;
+$dark: #222;
+$mid: #717171;
+$light: #b1b0b0;
+$very-light: #e5e3e3;
 
 body {
+  color: $dark;
+  font-size: 16.8px;
   height: 100vh;
   height: var(--app-height);
-  margin-left: 20px;
-  margin-right: 20px;
+  margin: 0;
   overflow: hidden;
   width: 100vw;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 a, button {
   -webkit-tap-highlight-color: transparent;
 }
 
-h1, h2, h3, h4, h5 {
-  @include dark-text();
-}
-
 h1 {
-  font-size: 3.5em;
-  font-weight: 400;
-
-  @media #{$phone} {
-    font-size: 2.5em;
-  }
+  font-size: 46px;
+  font-weight: 600;
 }
 
 h2 {
-  font-size: 2.5em;
-  font-weight: 400;
+  font-size: 32px;
+  font-weight: 500;
+  margin-top: 40px;
 }
 
 h3 {
-  font-size: 1.5em;
-  font-weight: 400;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 35px;
+}
+
+li {
+  font-size: 15px;
+  margin-bottom: 10px;
 }
 
 p {
-  font-size: 1.2em;
-  @include medium-text();
+  margin-bottom: 20px;
+  margin-top: 20px;
 }

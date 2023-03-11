@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import me from '../img/me.jpg';
+import ruby from '../img/ruby.svg';
 
 /**
  * The title component.
@@ -8,6 +10,11 @@ class Header extends Component {
     return (
       <div className="Header" id="Header">
         <h1>Long Running Requests on Rails</h1>
+        <div className="Header-Author">
+          <img alt="Me" src={ me } />
+          <img alt="Stylized Ruby logo" src={ ruby } />
+          <p>Written by <a href="http://whitney.ie">Stephen Whitney</a>, 11th March 2023</p>
+        </div>
         <p>
           Welcome to my blog post! This is a tutorial on how to handle long running requests in Rails. This tutorial
           will walk you through why long running requests are a problem in Rails and how to handle them in a scalable

@@ -14,9 +14,9 @@ class Code extends Component {
     const { children, inline } = this.props;
 
     return inline ? (
-      <span className="Code">{children}</span>
+      <span className="InlineCode">{children}</span>
     ) : (
-      <pre>{children}</pre>
+      <div className="CodeBlock">{children}</div>
     );
   }
 }

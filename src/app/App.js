@@ -1,4 +1,3 @@
-import About from '../about/About';
 import Conclusion from '../conclusion/Conclusion';
 import React, { Component } from 'react';
 import Header from '../header/Header';
@@ -6,7 +5,6 @@ import Implementation from '../implementation/Implementation';
 import Intro from '../intro/Intro';
 import Scenario from '../scenario/Scenario';
 import SocketHijacking from '../sockethijacking/SocketHijacking';
-import Toc from '../toc/Toc';
 
 /**,
  * The main driver and parent container for the app.
@@ -23,17 +21,13 @@ class App extends Component {
   render() {
     return (
       <div className="App" id="App">
-        <Header />
-        <div className="Layout">
-          <div className="Content">
-            <Intro />
-            <SocketHijacking />
-            <Scenario />
-            <Implementation />
-            <Conclusion />
-            <About />
-          </div>
-          <Toc />
+        <div>
+          <Header />
+          <Intro />
+          <SocketHijacking />
+          <Scenario />
+          <Implementation />
+          <Conclusion />
         </div>
       </div>
     );

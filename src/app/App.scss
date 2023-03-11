@@ -7,26 +7,8 @@
   height: var(--app-height);
   overflow-y: auto;
 
-  .Layout {
-    display: flex;
-    flex-direction: row;
-
-    div:first-child {
-      width: 75%;
-    }
-
-    div:last-child {
-      width: 25%;
-    }
-
-    @media #{$phone}, #{tablet} {
-      div:last-child {
-        display: none;
-      }
-
-      div:first-child {
-        width: 100%;
-      }
-    }
+  >:first-child {
+    margin-left: 20%;
+    width: 60%;
   }
 }

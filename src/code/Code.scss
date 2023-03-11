@@ -1,8 +1,20 @@
-// TODO use mixin
-.Code {
+@mixin code-text {
+  background-color: $very-light;
+  border-bottom: 1px solid $light;
+  border-radius: 3px;
+  color: $dark;
   font-family: 'Courier New', Courier, monospace;
 }
 
-pre {
-  font-family: 'Courier New', Courier, monospace;
+.InlineCode {
+  @include code-text();
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.CodeBlock {
+  @include code-text();
+  font-size: 15px;
+  padding: 10px;
+  overflow: wrap;
 }
