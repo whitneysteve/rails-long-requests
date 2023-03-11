@@ -1,7 +1,13 @@
 class Api::V2::RandomController < ApplicationController
   def index
-    sleep(30)
-    number = rand(1..10)
+    number = slow_rand
     render json: { randomNumber: number }
+  end
+
+  private
+
+  def slow_rand()
+    sleep(30)
+    rand(1..10)
   end
 end
