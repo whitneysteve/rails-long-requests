@@ -23,33 +23,33 @@ class Intro extends Component {
         </p>
         <h3>Limited threading in Ruby</h3>
         <p>
-          Based on that, we might think that adding threads in Rails will increase concurrency - and it does. However, to a limited extent.
+          Based on that you might think that adding threads in Rails will increase concurrency - and it does. However, to a limited extent.
         </p>
         <p>
-          Ruby is a really fun and easy language to learn and use and part of that is the Global Interpreter Lock (GIL). The GIL ensures that only one Ruby thread is executing per operating system process at any one time, except when waiting for I/O, for example, when making a database query, HTTP request or reading a file.
+          Ruby is a really fun and easy language to learn and use. Part of that is the Global Interpreter Lock (GIL). The GIL ensures that only one Ruby thread is executing per operating system process at any one time, except when waiting for I/O, for example, when making a database query, HTTP request or reading a file.
         </p>
         <p>
-          This means that it is easier to do certain concurrent tasks in a thread-safe manner but it also means that no matter how many threads you spawn or how many cores you have to use, only one Ruby thread will be executing at a time.
+          This means that it is easier to do certain concurrent tasks in a thread-safe manner. But it also means that no matter how many threads you spawn, or how many cores you have to use, only one Ruby thread will be executing at a time.
         </p>
         <p>
-          In a typical web application a significant amount of time is spent performing I/O, so Ruby and Rails will scale and increasing threads will likely help with concurrency. However, where a request requires a lot of calculations, waiting and/or polling increasing threads will have a limited effect.
+          In a typical web application a significant amount of time is spent performing I/O. Ruby and Rails will scale and increasing threads will likely help with concurrency. However, where a request requires a lot of calculations, waiting and/or polling increasing threads will have a limited effect.
         </p>
         <p>
           The maintenance of a thread is also overhead, which can often be unnecessary.
         </p>
         <h3>Thread exhaustion 😴</h3>
         <p>
-          We saw in the demo above that with short running tasks even a small number of threads can do a lot of work. However, Rails applications thread numbers are usually counted in single digits or low 10s. So when even a small number of longer running requests are made, it can quickly clog up the pipeline.
+          We saw in the demo above that with short running tasks even a small number of threads can do a lot of work. However, with Rails applications, thread numbers are usually counted in single digits or are in the low 10s. So when even a small number of longer running requests are made, it can quickly clog up the pipeline.
         </p>
         <p>
           Here's another demo that allows sending long running tasks, as well as short-running ones. Try running 4 long running tasks and then 10-20 short running tasks to see the difference.
         </p>
         <Threads numThreads={ 4 } allowLong />
         <p>
-          We quickly lose the ability to process requests. Rails will queue requests up behind the long running requests but that just means that there's a backlog to get through when the long running tasks are finished.And clients, normally, don't wait around forever!
+          We quickly lose the ability to process requests. Rails will queue requests up behind the long running requests but that just means that there's a backlog to get through when the long running tasks are finished. And clients, normally, don't wait around forever!
         </p>
         <p>
-          However, not only can we not respond to clients, if we are operating in a managed environment, like Amazon's Elastic Container Service, we will likely receive health check requests to make sure our service is healthy. If these fail or we fail to respond to them in a timely manner Amazon will kindly shutdown our server and start a new one, causing all these requests - running and queueing and incoming - to fail. 😔
+          However, not only can we not respond to clients, if we are operating in a managed environment, like Amazon's Elastic Container Service, we will likely receive health check requests to make sure our service is healthy. If these fail, or we fail to respond to them in a timely manner, Amazon will kindly shutdown our server and start a new one, causing all these requests - running and queueing and incoming - to fail. 😔
         </p>
       </>
     );

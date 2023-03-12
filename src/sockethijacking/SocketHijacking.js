@@ -25,14 +25,14 @@ class SocketHijacking extends Component {
         </p>
         <h3>Full or partial hijacking?</h3>
         <p>
-          There are two modes of Socket Hijacking - full and partial. Full completely takes over the responsibility of responding to the client, while partial allows Rails to send the HTTP response status line and headers but the hijacker is responsible for writing the body. In both modes, the hijacker is responsible for ensuring the socket to the client is correctly closed.
+          There are two modes of Socket Hijacking - full and partial. Full completely takes over the responsibility of responding to the client, while partial allows Rails to send the HTTP response status line and headers but the hijacker is responsible for writing the body. In both modes the hijacker is responsible for ensuring the socket to the client is correctly closed.
         </p>
         <h3>Why does this scale better? 📈</h3>
         <p>
-          In the example above where we saw long running requests taking up all request handling capability. We can work around this by adding another web-server. However, the amount we can handle for every web-server added is rather limited. If we add ten web-servers, each with 4 threads, we can still only handle 40 long running requests at a time.
+          In the example above we saw long running requests taking up all request handling capability. We can work around this by adding another web-server. However, the amount we can handle for every web-server added is rather limited. If we add ten web-servers, each with 4 threads, we can still only handle 40 long running requests at a time.
         </p>
         <p>
-          With socket hijacking, there are 65,535 sockets available per server. OK not all of those are available to us, we need to leave a healthy amount available to the OS, to the web-server, file servers and for communicating with downstream dependencies like databases. But even if we can allocate 1,000 of these sockets for long running requests we can scale at a much more efficient rate. Instead of being able to handle 40 additional long running requests with 10 web-servers we could handle 10,000.
+          With socket hijacking, there are 65,535 sockets available per server. OK - not all of those are available to us! We need to leave a healthy amount available to the OS, to the web-server, file servers and for communicating with downstream dependencies like databases. But even if we can allocate 1,000 of these sockets for long running requests we can scale at a much more efficient rate. Instead of being able to handle 40 additional long running requests with 10 web-servers we could handle 10,000.
         </p>
       </>
     );

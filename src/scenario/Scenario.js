@@ -13,13 +13,13 @@ class Scenario extends Component {
         <p>
           For exploratory purposes let's come up with a scenario that we can experiment with. Lets say we have a Rails project that:
         </p>
-        <ol>
+        <ul>
           <li>Provides a JSON API to generate random numbers</li>
           <li>We've developed a new way of generating random numbers that takes 30 seconds</li>
           <li>We want to include this cool new way of generating random numbers in our API</li>
-        </ol>
+        </ul>
         <p>
-          If you want to work along with this blog post we've set up a Rails application in <a href="https://github.com/whitneysteve/rails-long-requests">this GitHub repo</a>, along with the source code for this blog post. You can clone the repo with this command:
+          If you want to work along with this blog post I've set up a Rails application in <a href="https://github.com/whitneysteve/rails-long-requests">this GitHub repo</a>, along with the source code for this blog post. You can clone the repo with this command:
         </p>
         <Code>git clone https://github.com/whitneysteve/rails-long-requests.git</Code>
         <p>
@@ -27,7 +27,7 @@ class Scenario extends Component {
         </p>
         <h3>Checking the problem</h3>
         <p>
-          The Rails server in the repository above is configured with only one thread to make the problem abundantly clear and to make it easier to reproduce with a single person on a single machine. When you start the server with <Code inline>./run_rails</Code> you should see the following output:
+          The Rails server in the repository above is configured to run with only one thread. This is to make the problem abundantly clear and to make it easier to reproduce with a single person on a single machine. When you start the server with <Code inline>./run_rails</Code> you should see the following output:
         </p>
         <Code>
           <>
@@ -60,7 +60,7 @@ class Scenario extends Component {
         <iframe width="560" height="315" src="https://www.youtube.com/embed/VYPlCsjV-Ug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         <h3>Reproducing the problem</h3>
         <p>
-          If you try and use the new version of the API that takes 30 seconds, you can see the problem almost immediately:
+          If you try and use the new, v2 version of the API that takes 30 seconds, you can see the problem almost immediately:
         </p>
         <Code>
           <>
@@ -70,10 +70,10 @@ class Scenario extends Component {
         </Code>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/l1OaBlx_e54" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         <p>
-          While this request is running, you can't make any other requests to the API, even the simple v1 API that usually was so quick to respond.
+          While this request is running, you can't make any other requests to the server, even the simple v1 API that usually was so quick to respond.
         </p>
         <p>
-          Not only do we have a performance issue on our new API, we've also introduced one in our old, v1 API.
+          Not only do we have a performance issue on our new, v2 API, we've also introduced one in our old, v1 API.
         </p>
       </>
     );

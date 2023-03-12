@@ -7,7 +7,7 @@ import React, { Component, createRef } from 'react';
 class Threads extends Component {
   state = { position: 0, running: false };
 
-  defaultProps = { allowLong: false, allowSocketHijack: false };
+  static defaultProps = { allowLong: false, allowSocketHijack: false };
 
   constructor(props) {
     super(props);

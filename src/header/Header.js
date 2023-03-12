@@ -16,14 +16,25 @@ class Header extends Component {
           <p>Written by <a href="http://whitney.ie">Stephen Whitney</a>, 11th March 2023</p>
         </div>
         <p>
-          Welcome to my blog post! This is a tutorial on how to handle long running requests in Rails. This tutorial
-          will walk you through why long running requests are a problem and how to handle them in a scalable
-          fashion.
+          Welcome to my blog post! This is a post on how to handle long running requests in Rails.
         </p>
         <p>
           Along with <a href="https://whitneysteve.github.io/rails-long-requests/">this blog post</a> there is an
           accompanying <a href="https://github.com/whitneysteve/rails-long-requests">GitHub repository</a> with the Ruby source code and the source code for this blog.
         </p>
+        <h2>
+          Contents
+        </h2>
+        <p>
+          In this blog post we will:
+        </p>
+        <ul>
+          <li>Chat about what Ruby on Rails is and how it handles requests</li>
+          <li>Cover why are long running requests a problem for Rails and how well Rails scales in these scenarios</li>
+          <li>Introduce Socket Hijacking and how can it help scale Rails with long-running requests</li>
+          <li>Walk through a sample project that has introduced a long running request type and reproduce the problems</li>
+          <li>Implement socket hijacking and observe the results</li>
+        </ul>
       </div>
     );
   }
