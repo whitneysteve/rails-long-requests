@@ -53,6 +53,7 @@ li {
 }
 
 p {
+  line-height: 25px;
   margin-bottom: 20px;
   margin-top: 20px;
 }
